@@ -4,6 +4,7 @@ import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
+import './index.css';
 
 const API_KEY = 'TEpS7prFYnh1yebgZHq8GAmj6pFXT1Hi';
 const API_SECRET = 'lZCCSzRfViDqvTDq';
