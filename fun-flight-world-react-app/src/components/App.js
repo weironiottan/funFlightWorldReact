@@ -39,6 +39,25 @@ export default function App() {
   return (
 
     <div>
+      <section class="section">
+  <h1 class="title">Section</h1>
+  <div class="container">
+  <div class="notification is-primary">
+    This container is <strong>centered</strong> on desktop and larger viewports.
+    <form class="box">
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="control">
+      <input class="input" type="email" placeholder="e.g. alex@example.com"/>
+    </div>
+  </div>
+  <button class="button is-primary">Sign in</button>
+</form>
+
+
+  </div>
+</div>
+</section>
       <h1>Search Flights</h1>
       <SearchFlightButton searchData={debouncedValue} onSearchData={handleSearchButtonClick}/>
       <input list="airport" id={searchValue} onChange={e => setSearchValue(e.target.value)}/>
@@ -53,6 +72,11 @@ export default function App() {
       )):
       <div>No matches found!</div>}
       </div>  */}
+      {/* test here of bulma in */}
+      <div>
+
+  
+      </div>
     </div>
   );
 }
