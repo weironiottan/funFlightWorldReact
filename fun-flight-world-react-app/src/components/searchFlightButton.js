@@ -7,7 +7,7 @@ export default function SearchFlightButton(props) {
             axios.get(`https://test.api.amadeus.com/v1/shopping/flight-destinations?origin=${props.searchData}`)
             .then(data => {
               if(!!data) {
-                console.log(data.data.data, 'data from get')
+                console.log(data.data, 'data from get')
                 props.onSearchData(data.data.data)
               } 
             }, function(error) {
@@ -17,6 +17,9 @@ export default function SearchFlightButton(props) {
       };
 
     return(
-        <button onClick={getData}>Search Flight</button>
+        <button className="
+        w-36 h-12 bg-white rounded-full shadow-2xl 
+        transform transition place-self-end
+        hover:bg-blueGray-100 hover:-translate-y-2" onClick={getData}>Search Flight</button>
     );
 }
