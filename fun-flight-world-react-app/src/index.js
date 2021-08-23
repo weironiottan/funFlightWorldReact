@@ -20,7 +20,6 @@ axios.interceptors.request.use(request => {
 })
 
 axios.interceptors.response.use(response => {
-  console.log(response, 'response from interceptor')
   return response
 }, async function(error){
   if(error.response.status === 401) {
