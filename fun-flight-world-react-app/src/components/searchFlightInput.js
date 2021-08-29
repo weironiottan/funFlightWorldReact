@@ -1,23 +1,13 @@
 import { useEffect, useState} from 'react';
+import useDebounce from  '../custom-hooks/useDebounce'
 
-export default function SearchFlightInput(props) {
+export default function SearchFlightInput({ onInputValueChange }) {
   const [searchValue, setSearchValue] = useState();
-  const [debouncedSearchValue, setDebouncedSearchValue] = useState();
-
-
-    useEffect(() => {
-        let timeoutId = setTimeout(() => {
-            setDebouncedSearchValue(searchValue)
-        }, 500)
-    
-        return () => {
-          clearTimeout(timeoutId)
-        }
-      }, [searchValue])
+  const debouncedSearchTerm = useDebounce(searchValue, 500);
 
     useEffect(() => {       
-        props.onInputValueChange(debouncedSearchValue)
-    }, [debouncedSearchValue, props])
+        onInputValueChange(debouncedSearchTerm)
+    }, [debouncedSearchTerm, onInputValueChange])
 
     return (
     <>
